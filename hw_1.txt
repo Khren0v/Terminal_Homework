@@ -1,0 +1,98 @@
+1) Посмотреть где я
+pwd
+
+2) Создать папку
+mkdir 29_QA_qourse
+
+3) Зайти в папку
+cd 29_QA_qourse
+
+4) Создать 3 папки
+mkdir QA1 QA2 QA3
+
+5) Зайти в любоую папку
+cd QA1
+
+6) Создать 5 файлов (3 txt, 2 json)
+touch 1.txt 2.txt 3.txt 1.json 2.json
+
+7) Создать 3 папки
+mkdir Test1 Test2 Test3
+
+8) Вывести список содержимого папки
+ls -la
+
+9) + Открыть любой txt файл
+cat 1.json
+
+10) + написать туда что-нибудь, любой текст
+Vim 1.txt
+Hello, mentor ;)
+
+Hello, menthor ;)
+
+Qq
+Aa
+Zz
+Ww
+
+Bye, bye
+
+11) + сохранить и выйти
+:wq
+
+12) Выйти из папки на уровень выше
+cd ..
+
+13) переместить любые 2 файла, которые вы создали, в любую другую папку
+mv QA1/1.txt QA1/2.txt QA1/Test1
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку
+cp QA1/3.txt 1.json QA3
+
+15) Найти файл по имени
+find QA3 -name "1.json"
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает
+tail -f QA1/Test1/1.txt
+во втором окне терминала cat >> QA1/Test1/1.txt и вношу правки. Правки отображаются в первом окне терминала. К этой команде еще можно через пайплайн прикрутить grep чтобы выводил только то, что ищещь - tail -f QA1/Test1/1.txt | grep err
+Выход ctrl + c
+
+tail -F anything_1.txt | grep --line-buffered 17: | cat >> texample2.txt
+
+17) вывести несколько первых строк из текстового файла
+grep -m3 ""  QA1/Test1/1.txt
+Или
+head -3 QA1/Test1/1.txt | grep "^"
+
+18) вывести несколько последних строк из текстового файла
+grep -w ""  QA1/Test1/1.txt | tail -3
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает
+less QA1/Test1/1.txt
+Q
+
+20) вывести дату и время
+Date
+
+Задание *
+1) Отправить http запрос на сервер http://162.55.220.72:5005/terminal-hw-request
+curl "http://162.55.220.72:5005/get_method?name=Kirill&age=31"
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+cat > script.sh
+#!/bin/bash
+cd QA3
+mkdir QQ1 QQ2 QQ3
+cd QQ3
+touch qq1.txt qq2.txt qq3.txt qq1.json qq2.json
+mkdir Q1 Q2 Q3
+ls 
+cd..
+mv qq1.txt /Q1
+mv qq1.json /Q2
+echo "конец =)"
+
+chmod +x script.sh
+sh script.sh
