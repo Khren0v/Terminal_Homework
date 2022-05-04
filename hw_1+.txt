@@ -1,0 +1,4 @@
+#Запустить скрипт script.py, посмотреть файл anything_1.txt, отфильтровать информацию и вывести в файл result.txt
+
+tail -F anything_1.txt | grep --line-buffered 17: | cat >> result.txt
+
